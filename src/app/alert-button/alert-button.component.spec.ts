@@ -19,6 +19,7 @@ describe('AlertButtonComponent', () => {
   let de: DebugElement;
 
   beforeEach(async(() => {
+    // mock the service
     serviceStub = {
       getMessage(): Promise<string> {
         return of('You have been warned from stub!').toPromise();
