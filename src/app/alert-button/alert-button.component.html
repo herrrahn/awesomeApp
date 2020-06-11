@@ -1,0 +1,13 @@
+<div class="body">
+  <h1>Alert Button</h1>
+
+  <button class="btn" (click)="toggle()">Toggle Visibility</button>
+
+  <div class="card" [hidden]="hideContent">
+    <p class="card-text">Warning code {{severity}}</p>
+    <div class="card-body">
+      <p class="card-text">{{content}}</p>
+    </div>
+  </div>
+
+</div>
