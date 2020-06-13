@@ -29,7 +29,7 @@ describe('AlertButtonComponent', () => {
     // TestBed is a NGModel for this test environment
     TestBed.configureTestingModule({
       declarations: [AlertButtonComponent],
-      providers: [{ provide: AlertButtonService, useValue: serviceStub }]
+      providers: [{provide: AlertButtonService, useValue: serviceStub}]
     })
       .compileComponents(); // compiles template and css
   }));
