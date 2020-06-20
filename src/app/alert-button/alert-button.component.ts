@@ -19,7 +19,13 @@ export class AlertButtonComponent implements OnInit {
   }
 
   async load() {
-    this.content = await this.alertButtonService.getMessage();
+    this.content = await this.alertButtonService.getMessageAsPromise();
+  }
+
+  loadWithObservable() {
+    this.alertButtonService.getMessageAsObservable().subscribe(message =>
+      this.content = message
+    );
   }
 
   toggle() {
@@ -30,6 +36,10 @@ export class AlertButtonComponent implements OnInit {
     setTimeout(() => {
       this.toggle();
     }, 500);
+  }
+
+  notImplemented() {
+    throw new Error('Sorry not implemented yet :(');
   }
 
 }
