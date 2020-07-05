@@ -68,7 +68,7 @@ describe('AlertButtonComponent', () => {
     expect(component.content).toBe('from spy obs');
   });
 
-  // validating response from a promise
+  // validating response from a promise with spy
   it('it should have message content from promise', async () => {
     await component.load();
     expect(spy).toHaveBeenCalled();
