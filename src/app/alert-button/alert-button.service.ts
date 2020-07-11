@@ -15,6 +15,7 @@ export class AlertButtonService {
   }
 
   getMessageAsObservable(): Observable<string> {
-    return of('You have been warned from a real observable!');
+    return this.http.get<string>('./assets/message.json');
+    // return of('You have been warned from a real observable!');
   }
 }

@@ -90,4 +90,17 @@ describe('AlertButtonComponent', () => {
     expect(component.content).toBeDefined();
     expect(component.content).toContain('observable');
   });
+
+  // validating a private variable
+  it('it should be a secret private variable', () => {
+    expect(component['topSecret']).toContain('secret');
+  });
+
+  // validating if a private method was called
+  it('it should call a private function', () => {
+    const privateSpy = spyOn<any>(component, 'secretFunction');
+    component.somePublicMethod();
+    expect(privateSpy).toHaveBeenCalled();
+  });
+
 });

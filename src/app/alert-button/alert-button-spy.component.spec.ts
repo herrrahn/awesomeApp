@@ -68,6 +68,15 @@ describe('AlertButtonComponent', () => {
     expect(component.content).toBe('from spy obs');
   });
 
+  // validating response from a observable
+  it('it should have message content from observable', () => {
+    const spy = spyOn(service, 'getMessageAsObservable').and.returnValue(of<string>('from spy obs'));
+    component.loadWithObservable();
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(component.content).toBeDefined();
+    expect(component.content).toBe('from spy obs');
+  });
+
   // validating response from a promise with spy
   it('it should have message content from promise', async () => {
     await component.load();

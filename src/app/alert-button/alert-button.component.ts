@@ -11,6 +11,8 @@ export class AlertButtonComponent implements OnInit {
   hideContent = true;
   content = 'You have been warned from constant!';
 
+  private topSecret = 'secret';
+
   constructor(private alertButtonService: AlertButtonService) {
   }
 
@@ -40,6 +42,14 @@ export class AlertButtonComponent implements OnInit {
 
   notImplemented() {
     throw new Error('Sorry not implemented yet :(');
+  }
+
+  somePublicMethod() {
+    console.log(this.secretFunction());
+  }
+
+  private secretFunction(): string {
+    return this.topSecret;
   }
 
 }
